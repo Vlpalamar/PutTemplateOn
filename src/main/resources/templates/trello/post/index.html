@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1> All Columns</h1>
+<a href="/column/create"> Create</a>
+
+<ul th:each ="c: ${columns}">
+    <li>
+        <span th:text="${c.title}"> </span><br>
+
+        <span> <a th:href="@{/column/edit/{id}/(id=${c.id})}"> edit</a></span>  &nbsp
+        <span><a th:href="@{/column/delete/{id}/(id=${c.id})}">delete </a></span>
+        <br>
+        <hr>
+    </li>
+</ul>
+
+
+</body>
+</html>
