@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1> All Posts</h1>
+<a href="/post/create"> Create</a>
+
+<ul th:each ="p: ${posts}">
+    <li>
+        <span th:text="${p.title}"> </span><br>
+        <span th:text="${p.recipe}"> </span><br>
+        <span th:text="${p.tags}"> </span><br>
+        <img th:src="${p.imgPath}" >
+
+        <span> <a th:href="@{/post/edit/{id}/(id=${p.id})}"> edit</a></span>  &nbsp
+        <span><a th:href="@{/post/delete/{id}/(id=${p.id})}">delete </a></span>
+        <br>
+        <hr>
+    </li>
+</ul>
+
+
+</body>
+</html>

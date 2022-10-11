@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form enctype="multipart/form-data" action="/post/store" method="post">
+
+
+    <input type="text" name="title" placeholder="title">
+    <br>
+    <!--    картинка-->
+    <input type="file" name="img" >
+<br>
+    <textarea name="recipe" placeholder="recipe" id="" cols="30" rows="10"></textarea>
+    <br>
+    <input type="text"name="tags" placeholder="tags">
+    <br>
+<!--    категории -->
+    <select  name="category_id" multiple>
+        <option
+                th:each="category: ${categories}"
+                th:value="${category.id}"
+                th:text="${category.name}"></option>
+    </select><br>
+
+
+    <input type="submit" value="Create">
+</form>
+<form action="/category/store" method="post">
+    <input type="text" name="newCategory" placeholder="new category">
+
+    <input type="submit" value="+">
+</form>
+
+</body>
+</html>

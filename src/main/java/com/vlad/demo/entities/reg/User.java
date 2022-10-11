@@ -1,6 +1,6 @@
 package com.vlad.demo.entities.reg;
 
-import com.vlad.demo.entities.trello.Post;
+import com.vlad.demo.entities.blog.Post;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -14,7 +14,7 @@ import java.util.Set;
 public class User implements UserDetails {
 
     @OneToMany
-    @JoinColumn(name = "column_id")
+    @JoinColumn(name = "post_id")
     private Set<Post> posts;
 
     @Id

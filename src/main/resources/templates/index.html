@@ -34,26 +34,42 @@
                         <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="/">Home</a></li>
                         <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="/about">About</a></li>
                         <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="/products">Products</a></li>
-                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="/store">Store</a></li>
+                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="/profile">profile</a></li>
+                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="/login">logIn</a></li>
+                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="/registration">Reg</a></li>
                     </ul>
+                    </div>
                 </div>
-            </div>
         </nav>
+        <ul th:each ="p: ${posts}">
+            <li>
         <section class="page-section clearfix">
             <div class="container">
                 <div class="intro">
-                    <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="/assets/img/intro.jpg" alt="..." />
-                    <div class="intro-text left-0 text-center bg-faded p-5 rounded">
-                        <h2 class="section-heading mb-4">
-                            <span class="section-heading-upper">Fresh Coffee</span>
-                            <span class="section-heading-lower">Worth Drinking</span>
-                        </h2>
-                        <p class="mb-3">Every cup of our quality artisan coffee starts with locally sourced, handpicked ingredients. Once you try it, our coffee will be a blissful addition to your everyday morning routine - we guarantee it!</p>
-                        <div class="intro-button mx-auto"><a class="btn btn-primary btn-xl" href="#!">Visit Us Today!</a></div>
-                    </div>
+
+
+<!--                            <span th:text="${p.tags}"> </span><br>-->
+<!--                            &lt;!&ndash;        <img src=th:text="${p.imgPath}">&ndash;&gt;-->
+
+<!--                     <br>-->
+<!--                            <hr>-->
+
+                            <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" img th:src="${p.imgPath}" alt="..." />
+                            <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+                                <h2 class="section-heading mb-4">
+                                    <span class="section-heading-lower" th:text="${p.title}" >Worth Drinking</span>
+                                </h2>
+                                <p  class="mb-3" th:text="${p.recipe}" > </p>
+                                <span class="section-heading-upper"  > ТУТ БУДУТ  КАТЕГОРИИ  </span>
+
+                                <div class="intro-button mx-auto"><a class="btn btn-primary btn-xl" href="#!">Visit Us Today!</a></div>
+                            </div>
+
                 </div>
             </div>
         </section>
+            </li>
+        </ul>
         <section class="page-section cta">
             <div class="container">
                 <div class="row">

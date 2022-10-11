@@ -6,6 +6,26 @@
 </head>
 <body>
 
-<h1>Hi there</h1>
+<form method="POST" action="/registration">
+    <h2>Регистрация</h2>
+    <div>
+        <input type="text" name="username" placeholder="Username"
+                  />
+<!--        <errors path="username"></errors>-->
+<!--        ${usernameError}-->
+    </div>
+    <div>
+        <input type="password" name="password" placeholder="Password"/>
+    </div>
+    <div>
+        <input type="password" name="passwordConfirm"
+                    placeholder="Confirm your password"/>
+<!--        <form:errors path="password"></form:errors>-->
+<!--        ${passwordError}-->
+    </div>
+    <button type="submit">Зарегистрироваться</button>
+</form>
+<a href="/">Главная</a>
+
 </body>
 </html>
