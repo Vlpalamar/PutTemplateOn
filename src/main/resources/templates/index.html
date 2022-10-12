@@ -54,15 +54,20 @@
 <!--                     <br>-->
 <!--                            <hr>-->
 
-                            <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" img th:src="${p.imgPath}" alt="..." />
+                            <img class="intro-img img-fluid mb-3 mb-lg-0 rounded"  th:src="'/'+${p.imgPath}" alt="..." />
                             <div class="intro-text left-0 text-center bg-faded p-5 rounded">
                                 <h2 class="section-heading mb-4">
                                     <span class="section-heading-lower" th:text="${p.title}" >Worth Drinking</span>
                                 </h2>
                                 <p  class="mb-3" th:text="${p.recipe}" > </p>
-                                <span class="section-heading-upper"  > ТУТ БУДУТ  КАТЕГОРИИ  </span>
+                                <ul  style="list-style-type: none"   th:each ="c: ${p.categories}" >
+                                    <li STYLE="float: left" >
+                                        <a class="section-heading-upper"  th:text="${c.name}+'/'" th:href="'/'+home+'/'+${c.name}"  >     </a>
+                                    </li>
+                                </ul>
 
-                                <div class="intro-button mx-auto"><a class="btn btn-primary btn-xl" href="#!">Visit Us Today!</a></div>
+
+                                <div class="intro-button mx-auto"><a class="btn btn-primary btn-xl" th:text="${p.getUser.getUsername}" th:href="'/'+profile+'/'+${p.getUser.getUsername}"></a></div>
                             </div>
 
                 </div>

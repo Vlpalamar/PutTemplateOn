@@ -120,7 +120,7 @@ public class PostItemController {
 
         postRepository.save(post);
 
-        return  new RedirectView("/post");
+        return  new RedirectView("/profile");
     }
 
 
@@ -130,6 +130,7 @@ public class PostItemController {
     @GetMapping("/post/edit/{id}")
     public String edit(Model model, @PathVariable(name = "id") Long id)
     {
+        model.addAttribute("categories",categoryRepository.findAll() );
         Post p= postRepository.findById(id).get();
         model.addAttribute("post", p);
         return "blog/post/edit";

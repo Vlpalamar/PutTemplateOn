@@ -6,14 +6,25 @@
 </head>
 <body>
 <h1>Edit </h1>
-<form action="/post/store" method="post">
+<form enctype="multipart/form-data" action="/post/store" method="post">
     <input type="hidden" name="id" th:field="${post.id}" >
     <input type="text" name="title" th:field="${post.title}" >
     <br>
+    <input type="file" name="img"  >
+    <br>
     <textarea name="recipe" placeholder="recipe" id="" cols="30" rows="10" th:field="${post.recipe}"></textarea>
     <br>
-    <input type="text"name="tags" placeholder="tags" th:field="${post.tags}">
-    <input type="submit" value="Create">
+    <input type="text" name="tags" placeholder="tags" th:field="${post.tags}">
+    <br>
+    <select  name="category_id"  multiple>
+        <option
+                th:each="category: ${categories}"
+                th:value="${category.id}"
+                th:text="${category.name}"></option>
+    </select><br>
+
+    <input type="submit" value="Edit">
 </form>
+
 </body>
 </html>
